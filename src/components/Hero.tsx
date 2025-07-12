@@ -1,17 +1,26 @@
-import { Upload, CheckCircle2 } from "lucide-react";
+import { Upload, CheckCircle2, Sparkles, Zap, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aiRobot from "@/assets/ai-robot.png";
+import aiRobotEnhanced from "@/assets/ai-robot-enhanced.png";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen bg-hero-gradient overflow-hidden">
-      {/* Background particles effect */}
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
+        {/* Animated particles */}
         <div className="absolute top-20 left-10 w-1 h-1 bg-primary rounded-full animate-pulse"></div>
         <div className="absolute top-40 right-20 w-1 h-1 bg-primary/60 rounded-full animate-pulse delay-300"></div>
         <div className="absolute top-60 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse delay-700"></div>
         <div className="absolute bottom-40 right-10 w-1 h-1 bg-primary rounded-full animate-pulse delay-500"></div>
         <div className="absolute bottom-60 left-1/3 w-1 h-1 bg-primary/60 rounded-full animate-pulse delay-1000"></div>
+        
+        {/* Larger floating elements */}
+        <div className="absolute top-32 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float"></div>
+        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 pt-24 pb-12">
@@ -29,19 +38,47 @@ const Hero = () => {
               </p>
             </div>
 
+            {/* Feature highlights */}
+            <div className="flex flex-wrap gap-4 py-4">
+              <div className="flex items-center gap-2 bg-secondary/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                <Brain className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">Smart Analysis</span>
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                <Zap className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">Instant Feedback</span>
+              </div>
+              <div className="flex items-center gap-2 bg-secondary/50 px-3 py-1 rounded-full backdrop-blur-sm">
+                <Sparkles className="h-4 w-4 text-primary" />
+                <span className="text-sm text-foreground">AI-Powered</span>
+              </div>
+            </div>
+
             <div className="pt-4">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-6 rounded-xl">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-6 rounded-xl relative group">
                 <Upload className="mr-2 h-5 w-5" />
                 Upload Your Resume
+                <div className="absolute inset-0 bg-primary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Illustration */}
+          {/* Right Content - Enhanced Illustration */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Resume Card */}
-              <div className="relative bg-card border border-border rounded-2xl p-6 shadow-2xl max-w-sm w-full animate-float">
+              {/* Floating elements around the resume */}
+              <div className="absolute -top-4 -left-4 text-primary animate-float">
+                <Sparkles className="h-6 w-6" />
+              </div>
+              <div className="absolute -top-2 right-8 text-primary/60 animate-float" style={{ animationDelay: '1s' }}>
+                <Zap className="h-5 w-5" />
+              </div>
+              <div className="absolute bottom-4 -left-6 text-primary/40 animate-float" style={{ animationDelay: '2s' }}>
+                <Brain className="h-5 w-5" />
+              </div>
+
+              {/* Resume Card with enhanced styling */}
+              <div className="relative bg-card border border-border rounded-2xl p-6 shadow-2xl max-w-sm w-full animate-float backdrop-blur-sm">
                 <div className="space-y-4">
                   <div className="text-center">
                     <h3 className="text-xl font-semibold text-muted-foreground mb-4">RESUME</h3>
@@ -50,15 +87,15 @@ const Hero = () => {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                      <div className="h-2 bg-muted rounded flex-1"></div>
+                      <div className="h-2 bg-gradient-to-r from-primary to-primary/60 rounded flex-1"></div>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                      <div className="h-2 bg-muted rounded flex-1"></div>
+                      <div className="h-2 bg-gradient-to-r from-primary to-primary/60 rounded flex-1"></div>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                      <div className="h-2 bg-muted rounded flex-1"></div>
+                      <div className="h-2 bg-gradient-to-r from-primary to-primary/60 rounded flex-1"></div>
                     </div>
                   </div>
                   
@@ -68,19 +105,36 @@ const Hero = () => {
                     <div className="h-2 bg-muted rounded w-2/3"></div>
                   </div>
                 </div>
+                
+                {/* Card glow effect */}
+                <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl animate-pulse-glow"></div>
               </div>
 
-              {/* AI Robot */}
+              {/* Enhanced AI Robot */}
               <div className="absolute -bottom-8 -right-8 lg:-right-12">
                 <div className="relative">
                   <img 
-                    src={aiRobot} 
+                    src={aiRobotEnhanced} 
                     alt="AI Assistant Robot" 
-                    className="w-32 h-32 lg:w-40 lg:h-40 animate-float"
+                    className="w-36 h-36 lg:w-44 lg:h-44 animate-float drop-shadow-2xl"
                     style={{ animationDelay: '1s' }}
                   />
+                  {/* Multiple glow layers for enhanced effect */}
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow"></div>
+                  <div className="absolute inset-2 bg-primary/10 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
+                  
+                  {/* AI thinking indicator */}
+                  <div className="absolute -top-2 -right-2 bg-primary rounded-full p-1 animate-pulse">
+                    <Brain className="h-3 w-3 text-primary-foreground" />
+                  </div>
                 </div>
+              </div>
+
+              {/* Connecting lines/dots */}
+              <div className="absolute top-1/2 right-4 flex flex-col gap-1">
+                <div className="w-1 h-1 bg-primary rounded-full animate-pulse"></div>
+                <div className="w-1 h-1 bg-primary/60 rounded-full animate-pulse delay-200"></div>
+                <div className="w-1 h-1 bg-primary/40 rounded-full animate-pulse delay-400"></div>
               </div>
             </div>
           </div>
