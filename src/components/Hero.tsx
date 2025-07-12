@@ -1,3 +1,6 @@
+// Hero.tsx
+// This component renders the main hero section of the landing page, including the headline, features, and the right-side AI resume analysis illustration.
+
 import { Upload, CheckCircle2, Sparkles, Zap, Brain, TrendingUp, Target, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
