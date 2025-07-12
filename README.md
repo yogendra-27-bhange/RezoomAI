@@ -2,6 +2,15 @@
 
 AI-powered resume feedback and analysis platform. Instantly refine your resume, get actionable improvement suggestions, and boost your chances of getting hired—all powered by advanced AI (Gemini).
 
+## Features
+
+- **Smart Resume Analysis:** Get deep insights into your resume using AI.
+- **Instant AI Feedback:** Receive actionable suggestions in real-time.
+- **Improvement Suggestions:** See exactly what to change to improve your chances.
+- **Match Rate Calculation:** Understand how well your resume matches job requirements.
+- **Modern, Responsive UI:** Enjoy a beautiful, mobile-first user experience.
+- **Easy Resume Upload:** Upload your resume with a single click.
+
 ## Project info
 
 **URL**: <YOUR_PROJECT_URL>
