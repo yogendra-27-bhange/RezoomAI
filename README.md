@@ -33,6 +33,13 @@ npm install
 npm run dev
 ```
 
+## Usage
+
+1. Start the development server with `npm run dev`.
+2. Open your browser and go to `http://localhost:5173` (or the URL shown in your terminal).
+3. Click 'Upload Your Resume' to select and upload your resume file.
+4. View instant AI-powered feedback, match rate, and improvement suggestions on the dashboard.
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
