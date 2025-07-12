@@ -87,3 +87,15 @@ You can also use other static hosts (e.g., GitHub Pages, Surge, Firebase Hosting
 
 ### Custom Domain
 After deployment, follow your hosting provider's instructions to connect a custom domain.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions, bug reports, or want to add new features, feel free to open an issue or submit a pull request.
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature-name`)
+3. Make your changes
+4. Commit and push your branch
+5. Open a pull request describing your changes
+
+Thank you for helping improve RezoomAI!
