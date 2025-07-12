@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Enhanced Illustration */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end lg:pr-32">
             <div className="relative">
               {/* Floating elements around the resume */}
               <div className="absolute -top-4 -left-4 text-primary animate-float">
