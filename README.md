@@ -1,4 +1,6 @@
-# Welcome to your Project
+# RezoomAI
+
+AI-powered resume feedback and analysis platform. Instantly refine your resume, get actionable improvement suggestions, and boost your chances of getting hired—all powered by advanced AI (Gemini).
 
 ## Project info
 
