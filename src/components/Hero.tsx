@@ -113,8 +113,8 @@ const Hero = () => {
               <div className="absolute -bottom-12 -right-12 lg:-right-16">
                 <div className="relative">
                   {/* Central AI Brain */}
-                  <div className="relative w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center animate-pulse-glow">
-                    <Brain className="h-8 w-8 lg:h-10 lg:w-10 text-primary-foreground" />
+                  <div className="relative w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center animate-pulse-glow">
+                    <Brain className="h-14 w-14 lg:h-20 lg:w-20 text-primary-foreground" />
                     <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-pulse"></div>
                   </div>
 
