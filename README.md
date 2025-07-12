@@ -55,11 +55,13 @@ npm run dev
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** – Lightning-fast build tool
+- **React** – Modern UI library
+- **TypeScript** – Type-safe JavaScript
+- **Tailwind CSS** – Utility-first CSS framework
+- **shadcn/ui** – Beautiful, accessible UI components
+- **Lucide Icons** – Icon library for React
+- **PostCSS** – CSS transformations and optimizations
 
 ## How can I deploy this project?
 
