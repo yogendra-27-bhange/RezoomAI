@@ -15,25 +15,21 @@ AI-powered resume feedback and analysis platform. Instantly refine your resume, 
 
 **URL**: <YOUR_PROJECT_URL>
 
-## How can I edit this code?
+## Installation
 
-You can edit your application using your preferred IDE or directly in GitHub.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Follow these steps to set up the project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Clone the repository
+git clone https://github.com/yogendra-27-bhange/mobile-first-ui-design.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Navigate to the project directory
+cd mobile-first-ui-design
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the development server
 npm run dev
 ```
 
