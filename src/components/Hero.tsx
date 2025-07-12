@@ -1,6 +1,5 @@
-import { Upload, CheckCircle2, Sparkles, Zap, Brain } from "lucide-react";
+import { Upload, CheckCircle2, Sparkles, Zap, Brain, TrendingUp, Target, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import aiRobotEnhanced from "@/assets/ai-robot-enhanced.png";
 
 const Hero = () => {
   return (
@@ -110,22 +109,78 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl animate-pulse-glow"></div>
               </div>
 
-              {/* Enhanced AI Robot */}
-              <div className="absolute -bottom-8 -right-8 lg:-right-12">
+              {/* AI Analysis Visualization */}
+              <div className="absolute -bottom-12 -right-12 lg:-right-16">
                 <div className="relative">
-                  <img 
-                    src={aiRobotEnhanced} 
-                    alt="AI Assistant Robot" 
-                    className="w-36 h-36 lg:w-44 lg:h-44 animate-float drop-shadow-2xl"
-                    style={{ animationDelay: '1s' }}
-                  />
-                  {/* Multiple glow layers for enhanced effect */}
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow"></div>
-                  <div className="absolute inset-2 bg-primary/10 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
-                  
-                  {/* AI thinking indicator */}
-                  <div className="absolute -top-2 -right-2 bg-primary rounded-full p-1 animate-pulse">
-                    <Brain className="h-3 w-3 text-primary-foreground" />
+                  {/* Central AI Brain */}
+                  <div className="relative w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center animate-pulse-glow">
+                    <Brain className="h-8 w-8 lg:h-10 lg:w-10 text-primary-foreground" />
+                    <div className="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-pulse"></div>
+                  </div>
+
+                  {/* Floating Achievement Icons */}
+                  <div className="absolute -top-8 -left-8 bg-card/80 backdrop-blur-sm rounded-full p-2 border border-primary/20 animate-float">
+                    <TrendingUp className="h-4 w-4 text-primary" />
+                  </div>
+                  <div className="absolute -top-4 right-8 bg-card/80 backdrop-blur-sm rounded-full p-2 border border-primary/20 animate-float" style={{ animationDelay: '1s' }}>
+                    <Target className="h-4 w-4 text-primary" />
+                  </div>
+                  <div className="absolute bottom-8 -left-12 bg-card/80 backdrop-blur-sm rounded-full p-2 border border-primary/20 animate-float" style={{ animationDelay: '2s' }}>
+                    <Award className="h-4 w-4 text-primary" />
+                  </div>
+
+                  {/* Animated Progress Rings */}
+                  <div className="absolute inset-0 w-32 h-32 lg:w-36 lg:h-36">
+                    <svg className="w-full h-full -rotate-90 animate-spin" style={{ animationDuration: '8s' }}>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        r="45%"
+                        fill="none"
+                        stroke="hsl(var(--primary))"
+                        strokeWidth="1"
+                        strokeDasharray="20 10"
+                        opacity="0.3"
+                      />
+                    </svg>
+                  </div>
+                  <div className="absolute inset-2 w-28 h-28 lg:w-32 lg:h-32">
+                    <svg className="w-full h-full rotate-90 animate-spin" style={{ animationDuration: '12s' }}>
+                      <circle
+                        cx="50%"
+                        cy="50%"
+                        r="45%"
+                        fill="none"
+                        stroke="hsl(var(--primary-glow))"
+                        strokeWidth="1"
+                        strokeDasharray="15 15"
+                        opacity="0.4"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Data particles */}
+                  <div className="absolute top-0 left-0 w-1 h-1 bg-primary rounded-full animate-ping"></div>
+                  <div className="absolute top-4 right-2 w-1 h-1 bg-primary/60 rounded-full animate-ping delay-700"></div>
+                  <div className="absolute bottom-2 left-4 w-1 h-1 bg-primary/80 rounded-full animate-ping delay-1000"></div>
+                </div>
+              </div>
+
+              {/* Success Metrics Floating Cards */}
+              <div className="absolute top-12 -left-16 lg:-left-20">
+                <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-lg p-3 shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-primary">85%</div>
+                    <div className="text-xs text-muted-foreground">Match Rate</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-20 left-8">
+                <div className="bg-card/90 backdrop-blur-sm border border-primary/20 rounded-lg p-3 shadow-lg animate-float" style={{ animationDelay: '1.5s' }}>
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-primary">12</div>
+                    <div className="text-xs text-muted-foreground">Improvements</div>
                   </div>
                 </div>
               </div>
