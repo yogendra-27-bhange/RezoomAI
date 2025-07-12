@@ -66,10 +66,24 @@ This project is built with:
 - **Lucide Icons** – Icon library for React
 - **PostCSS** – CSS transformations and optimizations
 
-## How can I deploy this project?
+## Deployment
 
-You can deploy this project using your preferred hosting provider (e.g., Vercel, Netlify, etc.).
+You can deploy this project to any static hosting provider. Here are quick guides for popular platforms:
 
-## Can I connect a custom domain?
+### Deploy to Netlify
+1. Push your code to GitHub.
+2. Go to [Netlify](https://netlify.com/) and click 'New site from Git'.
+3. Connect your GitHub repo and follow the prompts.
+4. Set the build command to `npm run build` and the publish directory to `dist`.
+5. Click 'Deploy site'.
 
-Yes, you can! Follow your hosting provider's instructions to connect a custom domain.
+### Deploy to Vercel
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com/) and click 'New Project'.
+3. Import your GitHub repo and follow the prompts.
+4. Vercel auto-detects Vite projects; just click 'Deploy'.
+
+You can also use other static hosts (e.g., GitHub Pages, Surge, Firebase Hosting).
+
+### Custom Domain
+After deployment, follow your hosting provider's instructions to connect a custom domain.
