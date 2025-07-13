@@ -78,9 +78,9 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    // For Netlify Functions, we'll handle the file processing differently
-    // This is a simplified version - in production you might want to use a library like formidable
-    const body = event.body;
+    // For Netlify Functions, handle base64 encoding
+    const isBase64Encoded = event.isBase64Encoded;
+    const body = isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf-8') : event.body;
     if (!body) {
       return {
         statusCode: 400,

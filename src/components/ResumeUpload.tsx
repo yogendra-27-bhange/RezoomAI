@@ -74,7 +74,7 @@ const ResumeUpload: React.FC<ResumeUploadProps> = ({
         });
       }, 100);
 
-      const response = await fetch('/api/uploadResume', {
+      const response = await fetch('/.netlify/functions/uploadResume', {
         method: 'POST',
         body: formData,
       });
