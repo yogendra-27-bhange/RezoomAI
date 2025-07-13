@@ -252,7 +252,7 @@ const ResumeUpload: React.FC<ResumeUploadProps> = ({
             value={extractedText}
             onChange={handleTextInput}
             placeholder="Paste your resume content here..."
-            className="w-full h-32 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full h-32 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary bg-card text-foreground placeholder:text-muted-foreground"
             disabled={isLoading || isProcessing}
           />
           {extractedText && (
