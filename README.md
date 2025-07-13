@@ -258,12 +258,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
 - [Netlify](https://netlify.com/) for hosting and serverless functions
 
-## 📞 Support
 
-- 📧 Email: support@rezoomai.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/rezoomai/issues)
-- 📖 Documentation: [Wiki](https://github.com/yourusername/rezoomai/wiki)
-
----
-
-Made with ❤️ by the RezoomAI Team
