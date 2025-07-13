@@ -35,23 +35,24 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-hero-gradient overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-hero-gradient overflow-hidden">
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0">
-        {/* Animated particles */}
-        <div className="absolute top-20 left-10 w-1 h-1 bg-primary rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-primary/60 rounded-full animate-pulse delay-300"></div>
-        <div className="absolute top-60 left-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse delay-700"></div>
-        <div className="absolute bottom-40 right-10 w-1 h-1 bg-primary rounded-full animate-pulse delay-500"></div>
-        <div className="absolute bottom-60 left-1/3 w-1 h-1 bg-primary/60 rounded-full animate-pulse delay-1000"></div>
-        
-        {/* Larger floating elements */}
-        <div className="absolute top-32 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float"></div>
-        <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-primary/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        
+      <div className="absolute inset-0 pointer-events-none -z-10">
+        {/* Animated sparkles and orbs */}
+        <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full animate-float" />
+        <div className="absolute top-40 right-20 w-3 h-3 bg-primary/60 rounded-full animate-float" style={{ animationDelay: '0.7s' }} />
+        <div className="absolute top-60 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float" style={{ animationDelay: '1.2s' }} />
+        <div className="absolute bottom-40 right-10 w-2 h-2 bg-primary rounded-full animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-60 left-1/3 w-3 h-3 bg-primary/60 rounded-full animate-float" style={{ animationDelay: '2.1s' }} />
+        {/* Floating orbs */}
+        <div className="absolute top-32 right-1/4 w-8 h-8 bg-primary/20 rounded-full blur-2xl animate-pulse-glow" />
+        <div className="absolute bottom-32 left-1/4 w-12 h-12 bg-primary/10 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: '2s' }} />
         {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        {/* Extra animated sparkles */}
+        <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-blue-400/60 rounded-full animate-float" style={{ animationDelay: '1.8s' }} />
+        <div className="absolute bottom-10 right-1/3 w-2 h-2 bg-yellow-400/40 rounded-full animate-float" style={{ animationDelay: '2.5s' }} />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8">
