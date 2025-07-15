@@ -1,6 +1,7 @@
 import { Handler } from '@netlify/functions';
 import * as pdf from 'pdf-parse';
 import * as mammoth from 'mammoth';
+import Busboy from 'busboy';
 
 interface UploadResponse {
   success: boolean;
@@ -64,9 +65,7 @@ export const handler: Handler = async (event) => {
   }
 
   try {
-    // Parse multipart form data
     const contentType = event.headers['content-type'] || '';
-    
     if (!contentType.includes('multipart/form-data')) {
       return {
         statusCode: 400,
@@ -78,51 +77,30 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    // For Netlify Functions, handle base64 encoding
-    const isBase64Encoded = event.isBase64Encoded;
-    const body = isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString('utf-8') : event.body;
-    if (!body) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: 'No file uploaded' }),
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Content-Type': 'application/json',
-        },
-      };
-    }
-
-    // Parse the multipart data manually (simplified)
-    const boundary = contentType.split('boundary=')[1];
-    const parts = body.split(`--${boundary}`);
-    
-    let fileBuffer: Buffer | null = null;
+    let fileBuffer: Buffer = Buffer.alloc(0);
     let fileName = '';
     let fileType = '';
 
-    for (const part of parts) {
-      if (part.includes('Content-Disposition: form-data')) {
-        const nameMatch = part.match(/name="([^"]+)"/);
-        const filenameMatch = part.match(/filename="([^"]+)"/);
-        const contentTypeMatch = part.match(/Content-Type: ([^\r\n]+)/);
-        
-        if (nameMatch && nameMatch[1] === 'resume' && filenameMatch) {
-          fileName = filenameMatch[1];
-          fileType = contentTypeMatch ? contentTypeMatch[1] : '';
-          
-          // Extract file content (simplified - in production use proper parsing)
-          const contentStart = part.indexOf('\r\n\r\n') + 4;
-          const contentEnd = part.lastIndexOf('\r\n');
-          const content = part.substring(contentStart, contentEnd);
-
-          // Treat content as raw binary, not base64
-          fileBuffer = Buffer.from(content, 'binary'); // <-- FIXED: was 'base64', should be 'binary' for multipart
-          break;
+    // Use Busboy to parse the multipart form data
+    await new Promise<void>((resolve, reject) => {
+      const busboy = Busboy({ headers: { 'content-type': contentType } });
+      busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+        if (fieldname === 'resume') {
+          fileName = filename;
+          fileType = mimetype;
+          const buffers: Buffer[] = [];
+          file.on('data', (data) => buffers.push(data));
+          file.on('end', () => {
+            fileBuffer = Buffer.concat(buffers);
+          });
         }
-      }
-    }
+      });
+      busboy.on('finish', resolve);
+      busboy.on('error', reject);
+      busboy.end(event.isBase64Encoded ? Buffer.from(event.body || '', 'base64') : event.body);
+    });
 
-    if (!fileBuffer || !fileName) {
+    if (!fileBuffer.length || !fileName) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: 'No valid file found' }),
@@ -187,7 +165,6 @@ export const handler: Handler = async (event) => {
     };
   } catch (error) {
     console.error('Error in uploadResume function:', error);
-    
     return {
       statusCode: 500,
       body: JSON.stringify({ 
