@@ -114,8 +114,9 @@ export const handler: Handler = async (event) => {
           const contentStart = part.indexOf('\r\n\r\n') + 4;
           const contentEnd = part.lastIndexOf('\r\n');
           const content = part.substring(contentStart, contentEnd);
-          
-          fileBuffer = Buffer.from(content, 'base64');
+
+          // Treat content as raw binary, not base64
+          fileBuffer = Buffer.from(content, 'binary'); // <-- FIXED: was 'base64', should be 'binary' for multipart
           break;
         }
       }
